@@ -2,7 +2,10 @@
 
 Reusable call-to-action banners for WordPress posts. Build a CTA once, place it in any post with a block, and update it in one place when the campaign changes. Posts without a CTA get a sensible fallback automatically.
 
-Originally built in 2019 for a large corporate blog, to replace one-off banner images that went stale; rebuilt from scratch as a standalone plugin.
+Originally built in for a corporate blog to replace one-off banner images that went stale; rebuilt from scratch as a standalone plugin and updated from TinyMCE to WordPress Blocks.
+
+https://github.com/user-attachments/assets/ebef6e82-b6fe-4d17-bc1d-dca6c4a90d7a
+
 
 ## Features
 
