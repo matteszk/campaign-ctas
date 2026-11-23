@@ -12,14 +12,14 @@
 	const ServerSideRender = wp.serverSideRender;
 	const { __ } = wp.i18n;
 
-	registerBlockType( 'post-ctas/cta', {
+	registerBlockType( 'campaign-ctas/cta', {
 		edit( { attributes, setAttributes } ) {
 			const blockProps = useBlockProps();
 
 			// Fetch published CTAs over the REST API.
 			const ctas = useSelect(
 				( select ) =>
-					select( 'core' ).getEntityRecords( 'postType', 'pcta_cta', {
+					select( 'core' ).getEntityRecords( 'postType', 'ccta_cta', {
 						per_page: -1,
 						status: 'publish',
 						orderby: 'title',
@@ -33,12 +33,12 @@
 			}
 
 			const picker = el( SelectControl, {
-				label: __( 'Choose a CTA', 'post-ctas' ),
+				label: __( 'Choose a CTA', 'campaign-ctas' ),
 				value: attributes.ctaId,
 				options: [
-					{ label: __( '— Select —', 'post-ctas' ), value: 0 },
+					{ label: __( '— Select —', 'campaign-ctas' ), value: 0 },
 					...ctas.map( ( cta ) => ( {
-						label: cta.title.rendered || __( '(no title)', 'post-ctas' ),
+						label: cta.title.rendered || __( '(no title)', 'campaign-ctas' ),
 						value: cta.id,
 					} ) ),
 				],
@@ -47,7 +47,7 @@
 
 			// Before a CTA is chosen, show just the picker.
 			if ( ! attributes.ctaId ) {
-				return el( 'div', blockProps, el( Placeholder, { icon: 'megaphone', label: __( 'CTA', 'post-ctas' ) }, picker ) );
+				return el( 'div', blockProps, el( Placeholder, { icon: 'megaphone', label: __( 'CTA', 'campaign-ctas' ) }, picker ) );
 			}
 
 			// Afterwards, show the picker above a live preview rendered by PHP.
@@ -55,7 +55,7 @@
 				'div',
 				blockProps,
 				picker,
-				el( ServerSideRender, { block: 'post-ctas/cta', attributes } )
+				el( ServerSideRender, { block: 'campaign-ctas/cta', attributes } )
 			);
 		},
 

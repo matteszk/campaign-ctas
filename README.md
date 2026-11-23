@@ -1,4 +1,4 @@
-# Post CTAs
+# Campaign CTAs
 
 Reusable call-to-action banners for WordPress posts. Build a CTA once, place it in any post with a block, and update it in one place when the campaign changes. Posts without a CTA get a sensible fallback automatically.
 

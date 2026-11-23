@@ -1,4 +1,4 @@
-.pcta {
+.ccta {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1.5rem;
@@ -8,32 +8,32 @@
 	border-radius: 10px;
 }
 
-.pcta__image {
+.ccta__image {
 	flex: 0 0 auto;
 	max-width: 160px;
 }
 
-.pcta__image img {
+.ccta__image img {
 	display: block;
 	width: 100%;
 	height: auto;
 }
 
-.pcta__content {
+.ccta__content {
 	flex: 1 1 16rem;
 }
 
-.pcta__heading {
+.ccta__heading {
 	margin: 0 0 0.5rem;
 	font-size: 1.25em;
 	font-weight: 700;
 }
 
-.pcta__body {
+.ccta__body {
 	margin: 0 0 1rem;
 }
 
-.pcta__button {
+.ccta__button {
 	display: inline-block;
 	padding: 0.6em 1.2em;
 	border: 2px solid currentColor;
@@ -43,23 +43,23 @@
 	text-decoration: none;
 }
 
-.pcta__button:hover,
-.pcta__button:focus {
+.ccta__button:hover,
+.ccta__button:focus {
 	opacity: 0.8;
 }
 
 /* Themes */
-.pcta--dark {
+.ccta--dark {
 	background: #1d2327;
 	color: #fff;
 }
 
-.pcta--light {
+.ccta--light {
 	background: #f0f0f1;
 	color: #1d2327;
 }
 
-.pcta--brand {
+.ccta--brand {
 	background: var(--wp--preset--color--primary, #2271b1);
 	color: #fff;
 }

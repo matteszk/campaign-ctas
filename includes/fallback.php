@@ -5,7 +5,7 @@
  * Order: a CTA block in the post > the default for the post's first term
  * in the fallback taxonomy > the site-wide default.
  *
- * @package PostCTAs
+ * @package CampaignCTAs
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -16,20 +16,20 @@ defined( 'ABSPATH' ) || exit;
  * @param int $post_id Post ID.
  * @return int CTA ID, or 0 for none.
  */
-function pcta_get_fallback_cta( $post_id ) {
-	$taxonomy = get_option( 'pcta_taxonomy', 'category' );
+function ccta_get_fallback_cta( $post_id ) {
+	$taxonomy = get_option( 'ccta_taxonomy', 'category' );
 	$terms    = get_the_terms( $post_id, $taxonomy );
 
 	if ( $terms && ! is_wp_error( $terms ) ) {
 		foreach ( $terms as $term ) {
-			$cta_id = (int) get_term_meta( $term->term_id, 'pcta_default_cta', true );
+			$cta_id = (int) get_term_meta( $term->term_id, 'ccta_default_cta', true );
 			if ( $cta_id ) {
 				return $cta_id;
 			}
 		}
 	}
 
-	return (int) get_option( 'pcta_default_cta', 0 );
+	return (int) get_option( 'ccta_default_cta', 0 );
 }
 
 /**
@@ -38,17 +38,17 @@ function pcta_get_fallback_cta( $post_id ) {
  * @param string $content Post content.
  * @return string
  */
-function pcta_append_fallback( $content ) {
+function ccta_append_fallback( $content ) {
 	if ( ! is_singular( 'post' ) || ! in_the_loop() || ! is_main_query() ) {
 		return $content;
 	}
 
-	if ( has_block( 'post-ctas/cta', get_the_ID() ) ) {
+	if ( has_block( 'campaign-ctas/cta', get_the_ID() ) ) {
 		return $content;
 	}
 
-	$cta_id = pcta_get_fallback_cta( get_the_ID() );
+	$cta_id = ccta_get_fallback_cta( get_the_ID() );
 
-	return $cta_id ? $content . pcta_render_cta( $cta_id ) : $content;
+	return $cta_id ? $content . ccta_render_cta( $cta_id ) : $content;
 }
-add_filter( 'the_content', 'pcta_append_fallback' );
+add_filter( 'the_content', 'ccta_append_fallback' );

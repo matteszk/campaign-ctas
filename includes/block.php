@@ -2,7 +2,7 @@
 /**
  * The "CTA" block writers add to posts.
  *
- * @package PostCTAs
+ * @package CampaignCTAs
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -13,12 +13,12 @@ defined( 'ABSPATH' ) || exit;
  * It's a dynamic block: the post only stores the CTA's ID, and the markup is
  * rendered on each page view, so CTA edits show up everywhere.
  */
-function pcta_register_block() {
+function ccta_register_block() {
 	register_block_type(
-		PCTA_DIR . 'block',
+		CCTA_DIR . 'block',
 		array(
-			'render_callback' => fn( $attributes ) => pcta_render_cta( (int) ( $attributes['ctaId'] ?? 0 ) ),
+			'render_callback' => fn( $attributes ) => ccta_render_cta( (int) ( $attributes['ctaId'] ?? 0 ) ),
 		)
 	);
 }
-add_action( 'init', 'pcta_register_block' );
+add_action( 'init', 'ccta_register_block' );
