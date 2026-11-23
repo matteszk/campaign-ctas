@@ -1,0 +1,65 @@
+.pcta {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.5rem;
+	align-items: center;
+	margin: 2rem auto;
+	padding: 1.5rem;
+	border-radius: 10px;
+}
+
+.pcta__image {
+	flex: 0 0 auto;
+	max-width: 160px;
+}
+
+.pcta__image img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.pcta__content {
+	flex: 1 1 16rem;
+}
+
+.pcta__heading {
+	margin: 0 0 0.5rem;
+	font-size: 1.25em;
+	font-weight: 700;
+}
+
+.pcta__body {
+	margin: 0 0 1rem;
+}
+
+.pcta__button {
+	display: inline-block;
+	padding: 0.6em 1.2em;
+	border: 2px solid currentColor;
+	border-radius: 4px;
+	color: inherit;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.pcta__button:hover,
+.pcta__button:focus {
+	opacity: 0.8;
+}
+
+/* Themes */
+.pcta--dark {
+	background: #1d2327;
+	color: #fff;
+}
+
+.pcta--light {
+	background: #f0f0f1;
+	color: #1d2327;
+}
+
+.pcta--brand {
+	background: var(--wp--preset--color--primary, #2271b1);
+	color: #fff;
+}

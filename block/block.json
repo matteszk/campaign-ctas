@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "post-ctas/cta",
+	"title": "CTA",
+	"category": "widgets",
+	"icon": "megaphone",
+	"description": "Insert a reusable call-to-action banner.",
+	"keywords": [ "call to action", "banner", "promo" ],
+	"textdomain": "post-ctas",
+	"attributes": {
+		"ctaId": { "type": "number", "default": 0 }
+	},
+	"supports": { "html": false },
+	"editorScript": "file:./editor.js"
+}
