@@ -22,7 +22,9 @@ function ccta_render_cta( $cta_id ) {
 		return '';
 	}
 
-	wp_enqueue_style( 'ccta', CCTA_URL . 'style.css', array(), CCTA_VERSION );
+	// Registered from block.json; enqueued here too so fallback CTAs (added
+	// outside any block) are styled.
+	wp_enqueue_style( 'campaign-ctas-cta-style' );
 
 	$heading     = get_post_meta( $cta->ID, 'ccta_heading', true );
 	$body        = get_post_meta( $cta->ID, 'ccta_body', true );

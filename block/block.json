@@ -12,5 +12,6 @@
 		"ctaId": { "type": "number", "default": 0 }
 	},
 	"supports": { "html": false },
-	"editorScript": "file:./editor.js"
+	"editorScript": "file:./editor.js",
+	"style": "file:./style.css"
 }
